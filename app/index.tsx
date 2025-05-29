@@ -1,14 +1,16 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { View, Text, TextInput, TouchableOpacity } from "react-native";
-import { Link } from "expo-router";
+import { Link, useRouter } from "expo-router";
 
 export default function Login() {
-  const [email, setEmail]       = useState("");
+  const router = useRouter();
+  const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
   function handleLogin() {
     // TODO: integrar Firebase auth().signInWithEmailAndPassword(email, password)
     console.log({ email, password });
+    router.push("/welcome");
   }
 
   return (
@@ -43,13 +45,14 @@ export default function Login() {
         <Text className="font-semibold text-white">Entrar</Text>
       </TouchableOpacity>
 
-      <Link href="/register" asChild>
-        <TouchableOpacity className="w-full rounded-md py-4 items-center bg-slate-300">
-          <Text className="text-base font-semibold">
-            Não possui conta? Clique aqui
-          </Text>
-        </TouchableOpacity>
-      </Link>
+      <TouchableOpacity 
+        className="w-full rounded-md py-4 items-center bg-slate-300 text-center"
+        onPress={() => router.push("/register")}
+      >
+        <Text className="text-base font-semibold">
+          Não possui conta? Clique aqui
+        </Text>
+      </TouchableOpacity>
     </View>
   );
 }

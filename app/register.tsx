@@ -1,8 +1,9 @@
 import { useState } from "react";
 import { View, Text, TextInput, TouchableOpacity } from "react-native";
-import { Link } from "expo-router";
+import { Link, useRouter } from "expo-router";
 
 export default function register() {
+  const router = useRouter();
   const [name, setName]             = useState("");
   const [email, setEmail]           = useState("");
   const [password, setPassword]     = useState("");
@@ -58,13 +59,14 @@ export default function register() {
         <Text className="text-base font-semibold text-white">Entrar</Text>
       </TouchableOpacity>
 
-      <Link href="/" asChild>
-        <TouchableOpacity className="w-full rounded-md py-4 items-center bg-slate-300">
-          <Text className="text-base font-semibold">
-            Já possui uma conta? Faça login
-          </Text>
-        </TouchableOpacity>
-      </Link>
+      <TouchableOpacity 
+        className="w-full rounded-md py-4 items-center bg-slate-300"
+        onPress={() => router.back()}
+      >
+        <Text className="text-base font-semibold">
+          Já possui uma conta? Faça login
+        </Text>
+      </TouchableOpacity>
     </View>
   );
 }

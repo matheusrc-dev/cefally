@@ -1,6 +1,6 @@
 
 <div align="center">
-    <img src="./assets/cefaly.png" alt="Logo" width="200">
+    <img src="./assets/cefally.png" alt="Logo" width="200">
 
   <p align="center">
     Um aplicativo móvel para registrar, acompanhar e analisar episódios de cefaleia.
@@ -43,7 +43,7 @@ Ao longo do tempo, percebi como é importante manter registro dos episódios —
 
 ### Protótipos
 Os protótipos podem ser acessos neste link:
-https://www.figma.com/design/U5ZSicMuBaHga42wSojIEv/Cefaly?node-id=0-1&t=sxuid54mth0i6IMe-1
+https://www.figma.com/design/U5ZSicMuBaHga42wSojIEv/Cefally
 
 ### Modelagem do banco
 ```

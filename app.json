@@ -1,9 +1,9 @@
 {
   "expo": {
-    "name": "cefaly",
-    "slug": "cefaly",
+    "name": "cefally",
+    "slug": "cefally",
     "version": "1.0.0",
-    "scheme": "cefaly",
+    "scheme": "cefally",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",

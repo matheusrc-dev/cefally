@@ -18,6 +18,7 @@
     "expo-router": "~5.0.7",
     "expo-splash-screen": "~0.30.8",
     "expo-status-bar": "~2.2.3",
+    "firebase": "^11.8.1",
     "luxon": "^3.6.1",
     "nativewind": "^4.1.23",
     "react": "19.0.0",

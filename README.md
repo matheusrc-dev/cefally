@@ -147,3 +147,9 @@ Sprint 6 – Refinamento, Testes e Apresentação (Semana 6)
 
 - React Native (Expo)
 - TypeScript
+
+## Troubleshooting
+
+On Expo SDK 53, if you see "Warning: Error: Component auth has not been registered yet", follow this solution: https://stackoverflow.com/a/79636536 
+
+Retirado do repositório: [simple-firestore-hooks](https://github.com/andresjesse/simple-firestore-hooks/commit/4af99cfb262b78506d46a6e6d7b979777f8c006a#diff-1550ec65ac92f65817fc28928dfef526912b5f52356ff43651369bae92f56031R158-R159)

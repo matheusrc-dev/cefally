@@ -1,18 +1,32 @@
 import { useState } from "react";
 import { View, Text, TextInput, TouchableOpacity } from "react-native";
-import { Link, useRouter } from "expo-router";
+import { useRouter } from "expo-router";
+import useAuth from "@/firebase/hooks/useAuth";
+import Loading from "@/components/Loading";
 
 export default function register() {
+  const { registerUser, loading } = useAuth();
   const router = useRouter();
   const [name, setName]             = useState("");
   const [email, setEmail]           = useState("");
   const [password, setPassword]     = useState("");
   const [confirm, setConfirm]       = useState("");
 
-  function handleSignUp() {
-    // TODO: validar senhas e chamar createUserWithEmailAndPassword
-    console.log({ name, email, password, confirm });
+  const handleSignUp = async () => {
+    if (password !== confirm) {
+      alert("As senhas não coincidem!");
+      return;
+    }
+
+    try {
+      await registerUser(name, email, password);
+      router.replace("/(home)/welcome");
+    } catch (error: any) {
+      alert("Erro ao criar conta: " + error.message);
+    }
   }
+
+  if (loading) return <Loading />;
 
   return (
     <View className="flex-1 justify-center px-8 bg-white">

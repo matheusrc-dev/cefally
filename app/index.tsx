@@ -1,17 +1,33 @@
 import { useState, useEffect } from "react";
-import { View, Text, TextInput, TouchableOpacity } from "react-native";
-import { Link, useRouter } from "expo-router";
+import { View, Text, TextInput, TouchableOpacity, Alert } from "react-native";
+import { useRouter } from "expo-router";
+import useAuth from "@/firebase/hooks/useAuth";
+import Loading from "@/components/Loading";
 
 export default function Login() {
+  const { user, login, loading } = useAuth();
+
   const router = useRouter();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  function handleLogin() {
-    // TODO: integrar Firebase auth().signInWithEmailAndPassword(email, password)
-    console.log({ email, password });
-    router.push("/welcome");
-  }
+  useEffect(() => {
+    if (user) {
+      router.push("/(home)/home");
+    }
+  }, [user]);
+
+  const handleLogin = async () => {
+    try {
+      await login(email, password);
+      console.log("User logged in:", user);
+      router.replace("/(home)/home");
+    } catch (error: any) {
+      Alert.alert("Login error:", error.toString());
+    }
+  };
+
+  if (loading) return <Loading />;
 
   return (
     <View className="flex-1 justify-center px-8 bg-white">

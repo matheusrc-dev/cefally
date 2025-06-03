@@ -3,7 +3,7 @@
     "name": "cefally",
     "slug": "cefally",
     "version": "1.0.0",
-    "scheme": "cefally",
+    "scheme": "cefally-app",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",

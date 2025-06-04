@@ -20,7 +20,6 @@ export default function Login() {
   const handleLogin = async () => {
     try {
       await login(email, password);
-      console.log("User logged in:", user);
       router.replace("/(home)/home");
     } catch (error: any) {
       Alert.alert("Login error:", error.toString());
@@ -37,7 +36,7 @@ export default function Login() {
         placeholder="Email"
         keyboardType="email-address"
         autoCapitalize="none"
-        className="w-full rounded-md p-4 mb-4 text-base bg-slate-100"
+        className="w-full rounded-md p-4 mb-4 bg-slate-100"
         value={email}
         onChangeText={setEmail}
       />
@@ -45,7 +44,7 @@ export default function Login() {
       <TextInput
         placeholder="Senha"
         secureTextEntry
-        className="w-full rounded-md p-4 mb-4 text-base bg-slate-100"
+        className="w-full rounded-md p-4 mb-4 bg-slate-100"
         value={password}
         onChangeText={setPassword}
       />

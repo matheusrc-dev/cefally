@@ -1,7 +1,7 @@
 export interface Episode {
   id?: string; // reserved for firestore id
   userId: string;
-  timestamp: Date;
+  timestamp: number;
   dayPeriod: string;
   intensity: number;
   painLocation: string[];

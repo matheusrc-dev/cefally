@@ -36,7 +36,7 @@ export default function register() {
 
       <TextInput
         placeholder="Nome completo"
-        className="w-full rounded-md p-4 mb-4 text-base bg-slate-100"
+        className="w-full rounded-md p-4 mb-4 bg-slate-100"
         value={name}
         onChangeText={setName}
       />
@@ -45,7 +45,7 @@ export default function register() {
         placeholder="Email"
         keyboardType="email-address"
         autoCapitalize="none"
-        className="w-full rounded-md p-4 mb-4 text-base bg-slate-100"
+        className="w-full rounded-md p-4 mb-4 bg-slate-100"
         value={email}
         onChangeText={setEmail}
       />
@@ -53,7 +53,7 @@ export default function register() {
       <TextInput
         placeholder="Senha"
         secureTextEntry
-        className="w-full rounded-md p-4 mb-4 text-base bg-slate-100"
+        className="w-full rounded-md p-4 mb-4 bg-slate-100"
         value={password}
         onChangeText={setPassword}
       />
@@ -61,7 +61,7 @@ export default function register() {
       <TextInput
         placeholder="Confirmar senha"
         secureTextEntry
-        className="w-full rounded-md p-4 mb-6 text-base bg-slate-100"
+        className="w-full rounded-md p-4 mb-6 bg-slate-100"
         value={confirm}
         onChangeText={setConfirm}
       />

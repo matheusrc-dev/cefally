@@ -72,7 +72,7 @@ export default function newEpisode() {
   const handleRegister = async () => {
     const newEpisode: Episode = {
       userId: user?.uid ?? "anonymous",
-      timestamp: date,
+      timestamp: date.getTime(),
       dayPeriod,
       intensity,
       painLocation,
